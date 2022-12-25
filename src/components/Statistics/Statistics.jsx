@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 
 const Statistics = ({ good, neutral, bad, total, positiveVoices }) => {
@@ -16,3 +16,12 @@ const Statistics = ({ good, neutral, bad, total, positiveVoices }) => {
 }
 
 export default Statistics;
+
+Statistics.propTypes = {
+    good: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    positiveVoices: PropTypes.number.isRequired,
+    
+}

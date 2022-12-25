@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import FeedbackOptions from "./FeedbackOptions";
 import Statistics from "./Statistics";
 import Section from "./Section";
+import Notification from "./Notification";
 
 export class App extends Component {
   state = {
@@ -35,9 +36,10 @@ export class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     const feedbackOptions = Object.keys(this.state);
+    const totalVoices = this.countTotalFeedback();
 
     return (
-      // <Section title="Please leave feedback">
+      
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions 
@@ -46,13 +48,16 @@ export class App extends Component {
           />
         </Section>
         <Section title="Statistics">
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={this.countTotalFeedback()}
-            positiveVoices={this.countPositiveFeedbackPercentage()}
-          />
+          {totalVoices > 0 ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={this.countTotalFeedback()}
+              positiveVoices={this.countPositiveFeedbackPercentage()}
+            />
+            ) : (<Notification message="There is no feedback"></Notification>)
+          }
         </Section>  
           
       </>
@@ -62,4 +67,9 @@ export class App extends Component {
   }
 };
 
+// App.propTypes = {
+//   good: PropTypes.number.isRequired,
+//   neutral: PropTypes.number.isRequired,
+//   bad: PropTypes.number.isRequired,
 
+// }
