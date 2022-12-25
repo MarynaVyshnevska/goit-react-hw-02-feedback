@@ -1,0 +1,23 @@
+.Feedback__container {
+    display: flex;
+    list-style: none;
+}
+
+/* .Feedback__item {
+    
+} */
+
+.Feedback__button {
+    padding: 4px;
+    margin: 8px;
+    cursor: pointer;
+    background-color: antiquewhite;
+    color: tomato;
+}
+
+.Feedback__button:hover,
+.Feedback__button:focus {
+    background-color: burlywood;
+    color: chocolate;
+    transform: scale(1.15);
+}
