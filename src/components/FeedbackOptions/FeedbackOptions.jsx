@@ -10,14 +10,14 @@ const FeedbackOptions = ({options, onLeaveFeedback}) => {
             {options.map(option => (
                 <li key={option} className={css.Feedback__item}>
                     <button
-                    type="button"
-                    name={option}
-                    className={css.Feedback__button}
-                    onClick={onLeaveFeedback}
-                >
-                    {option}
-                {/* {option[0].toUpperCase() + option.substring(1)} */}
-                </button>
+                        type="button"
+                        name={option}
+                        className={css.Feedback__button}
+                        onClick={onLeaveFeedback}
+                    >
+                        {option}
+                    {/* {option[0].toUpperCase() + option.substring(1)} */}
+                    </button>
                 </li>
             ))}
         </ul>
