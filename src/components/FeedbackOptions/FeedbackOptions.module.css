@@ -11,13 +11,15 @@
     padding: 4px;
     margin: 8px;
     cursor: pointer;
-    background-color: antiquewhite;
-    color: tomato;
+    background-color: rgba(183 60 88, 15);
+    color: #b73c58;
+    border: 1px solid transparent;
+    border-radius: 2px;
 }
 
 .Feedback__button:hover,
 .Feedback__button:focus {
-    background-color: burlywood;
-    color: chocolate;
-    transform: scale(1.15);
+    background-color: #b73c58;
+    color: white;
+    transform: scale(1.2);
 }
